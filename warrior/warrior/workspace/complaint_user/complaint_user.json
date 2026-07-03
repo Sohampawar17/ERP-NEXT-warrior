@@ -1,0 +1,162 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"Aei8vEgWtI\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Complaints</span>\",\"col\":12}},{\"id\":\"Bd2XYIcptW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Complaints\",\"col\":3}},{\"id\":\"372uamz6kc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Closed Complaints\",\"col\":3}},{\"id\":\"7A3F-3kHfF\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"P1eissU2Nk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Stage-wise Open Complaints</b></span>\",\"col\":12}},{\"id\":\"yJxv6cz5v8\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_1ODKoky1v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Complaints\",\"col\":3}},{\"id\":\"uWXveukURU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"In-Progress Complaints\",\"col\":3}},{\"id\":\"jb-YKKV6iI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Technical Complaints\",\"col\":3}},{\"id\":\"ykK6ca9AOg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transport Complaints\",\"col\":3}},{\"id\":\"q9uBTg1voM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Pending Complaints\",\"col\":3}},{\"id\":\"J8Z4lYYqWx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material in transit Complaints\",\"col\":4}},{\"id\":\"R8FLJy6gpv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Replacement Outward Pending Complaints\",\"col\":4}},{\"id\":\"vXQTEL-sj0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Call not answering Complaints\",\"col\":3}},{\"id\":\"2cIpSh6WWo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material Inward Pending Complaints\",\"col\":4}},{\"id\":\"3MSShVSfBA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Waiting for data Complaints\",\"col\":4}},{\"id\":\"INAQspwA8P\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0M3J69lPCp\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Order Delivery Confirmation</b></span>\",\"col\":12}},{\"id\":\"9QtJLJq_ar\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending - Delivery B2B\",\"col\":4}},{\"id\":\"wOI655OyWS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending - Delivery B2C - Transport\",\"col\":4}},{\"id\":\"islkyC0X_9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending - Delivery B2C - Indian Post\",\"col\":3}},{\"id\":\"tXT83VmZ3G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Done\",\"col\":4}}]",
+ "creation": "2026-05-18 15:57:32.806935",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "file",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Complaint User",
+ "links": [],
+ "modified": "2026-07-02 11:05:32.121095",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Complaint User",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Complaint User"
+  }
+ ],
+ "sequence_id": 46.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Open Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"!=\",\"Resolved\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Material Inward Pending Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Material Inward Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Waiting for data Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Waiting for data\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending - Delivery B2B",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Dispatched\",false],[\"Sales Invoice\",\"customer_group\",\"=\",\"Dealer\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending - Delivery B2C - Transport",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Dispatched\",false],[\"Sales Invoice\",\"customer_group\",\"=\",\"Farmer\",false],[\"Sales Invoice\",\"transporter\",\"!=\",\"T0029\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Closed Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Resolved\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "In-Progress Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"In-Progress\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Delivery Done",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Delivered\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending - Delivery B2C - Indian Post",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Dispatched\",false],[\"Sales Invoice\",\"customer_group\",\"=\",\"Farmer\",false],[\"Sales Invoice\",\"transporter\",\"=\",\"T0029\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Technical Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Technical\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Transport Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Transport\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Accounts Pending Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Accounts Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Material in transit Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Material in transit\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Replacement Outward Pending Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Replacement Outward Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Call not answering Complaints",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[[\"Raise a Complaint\",\"status\",\"=\",\"Call not answering\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Complaint User"
+}

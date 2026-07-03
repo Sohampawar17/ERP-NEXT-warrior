@@ -574,6 +574,7 @@ def cron_update_sales_order_dispatch_status():
                     "MATERIAL SHORTAGE",
                     "PARTIALLY AVAILABLE",
                     "FULLY PAID",
+                    "READY TO DISPATCH",
                 ],
             ],
         },

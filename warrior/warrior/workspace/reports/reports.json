@@ -1,0 +1,219 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"u0hVILaOFf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Management Reports</span>\",\"col\":12}},{\"id\":\"6OB_6k6jXt\",\"type\":\"card\",\"data\":{\"card_name\":\"Performance Reports\",\"col\":4}},{\"id\":\"rkx1qIlGoj\",\"type\":\"card\",\"data\":{\"card_name\":\"KPI Reports\",\"col\":4}},{\"id\":\"28J1nSbRB0\",\"type\":\"card\",\"data\":{\"card_name\":\"Lead Reports\",\"col\":4}},{\"id\":\"-34_lyfUyq\",\"type\":\"card\",\"data\":{\"card_name\":\"Brand Ambassador Reports\",\"col\":4}},{\"id\":\"lmtruclL0m\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Reports\",\"col\":4}},{\"id\":\"xoo0dW4yJ3\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "creation": "2026-04-30 12:09:21.467264",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "projects",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Reports",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Performance Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Performance Report",
+   "link_count": 0,
+   "link_to": "Performance Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Brand Ambassador Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Brand Ambassador Revenue Dashboard",
+   "link_count": 0,
+   "link_to": "Brand Ambassador Revenue Dashboard",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lead Reports",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lead Report",
+   "link_count": 0,
+   "link_to": "Lead Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Warrior-wise Lead Count",
+   "link_count": 0,
+   "link_to": "Warrior wise lead count",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Campaign-wise Revenue",
+   "link_count": 0,
+   "link_to": "Campaign-wise Revenue",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Auto Order Report",
+   "link_count": 0,
+   "link_to": "Auto Order Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Executivewise detailed order report",
+   "link_count": 0,
+   "link_to": "Sales Hierarchy-wise Summery Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Dealer Revenue Report",
+   "link_count": 0,
+   "link_to": "Dealer Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "KPI Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "KPI Report",
+   "link_count": 0,
+   "link_to": "KPI Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Employee KM Report",
+   "link_count": 0,
+   "link_to": "Employee KM Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Warrior-wise Area Details",
+   "link_count": 0,
+   "link_to": "Warrior-wise Area Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-29 21:29:31.119415",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Reports",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "VP \u2013 Sales"
+  },
+  {
+   "role": "MH \u2013 Sales"
+  },
+  {
+   "role": "OMS Head \u2013 Sales"
+  },
+  {
+   "role": "RSM \u2013 Sales"
+  },
+  {
+   "role": "TSM \u2013 Sales"
+  },
+  {
+   "role": "VRM \u2013 Sales"
+  },
+  {
+   "role": "GL \u2013 B2C"
+  },
+  {
+   "role": "TL \u2013 B2C"
+  },
+  {
+   "role": "Head \u2013 Back Office"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Sales Back Office"
+  }
+ ],
+ "sequence_id": 45.0,
+ "shortcuts": [],
+ "title": "Reports"
+}

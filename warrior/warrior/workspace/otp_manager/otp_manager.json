@@ -1,0 +1,41 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"XZT2nrOiYF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">OTP Manager</span>\",\"col\":12}},{\"id\":\"2IH28ewKoq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Show otp form mobile no.\",\"col\":3}}]",
+ "creation": "2026-04-09 17:44:35.575503",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "solid-success",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "OTP Manager",
+ "links": [],
+ "modified": "2026-07-02 11:05:08.751838",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "OTP Manager",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "OTP Manager"
+  }
+ ],
+ "sequence_id": 43.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Show otp form mobile no.",
+   "link_to": "show-otp",
+   "type": "Page"
+  }
+ ],
+ "title": "OTP Manager"
+}
