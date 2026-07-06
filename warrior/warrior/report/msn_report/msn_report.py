@@ -11,14 +11,19 @@ def execute(filters=None):
 
     if filters.get("brand"):
         conditions += " AND i.brand = %(brand)s"
+    if filters.get("item_status") == "Enabled":
+        conditions += " AND i.disabled = 0"
 
+    elif filters.get("item_status") == "Disabled":
+        conditions += " AND i.disabled = 1"
     columns = [
-        {"label": "Warehouse", "fieldname": "warehouse", "fieldtype": "Data", "width": 150},
+        {"label": "Warehouse", "fieldname": "warehouse", "fieldtype": "Data", "width": 170},
         {"label": "Brand ID", "fieldname": "brand_id", "fieldtype": "Data", "width": 80},
-        {"label": "Brand Name", "fieldname": "brand_name", "fieldtype": "Data", "width": 150},
-        {"label": "Product ID", "fieldname": "item_code", "fieldtype": "Data", "width": 150},
+        {"label": "Brand Name", "fieldname": "brand_name", "fieldtype": "Data", "width": 120},
+        {"label": "Product ID", "fieldname": "item_code", "fieldtype": "Data", "width": 120},
         {"label": "Product Name", "fieldname": "item_name", "fieldtype": "Data", "width": 280},
         {"label": "Generic Name", "fieldname": "generic_name", "fieldtype": "Data", "width": 180},
+        {"label": "Item Status", "fieldname": "item_status", "fieldtype": "Data", "width": 100},
         {"label": "Warehouse Qty", "fieldname": "actual_qty", "fieldtype": "Int", "width": 130},
         {"label": "Reserved Qty", "fieldname": "reserved_qty", "fieldtype": "Int", "width": 130},
         {"label": "Available Qty", "fieldname": "available_qty", "fieldtype": "Int", "width": 130},
@@ -41,6 +46,11 @@ def execute(filters=None):
             i.item_code,
             i.item_name,
             i.custom_genric_name AS generic_name,
+            i.disabled,
+            CASE
+                WHEN i.disabled = 1 THEN 'Disabled'
+                ELSE 'Enabled'
+            END AS item_status,
             bin.actual_qty,
             bin.reserved_stock AS reserved_qty,
             (bin.actual_qty - bin.reserved_stock) AS available_qty,
@@ -86,7 +96,6 @@ def execute(filters=None):
             ON ir.parent = i.name AND ir.warehouse = bin.warehouse
         WHERE
             1=1 {conditions}
-            AND i.disabled = 0
             AND ir.warehouse_reorder_level > 0
     ) report_data
 """, filters, as_dict=1)

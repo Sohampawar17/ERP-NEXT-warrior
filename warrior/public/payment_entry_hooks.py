@@ -420,7 +420,7 @@ def set_order_reference_for_payment_entry(doc, method):
             doc.custom_payment_status = "In Credit Period"
         else:
             doc.custom_payment_status = ""
-        
+
 # HOOK FUNCTIONS
 # -----------------------------
 
@@ -453,6 +453,7 @@ def create_payment_entry_for_po_submit(doc, method):
     _create_payment_entry_for_term(doc, term_name)
     
 
+
 def create_payment_entry_for_pi_submit(doc, method):
     po_names = _get_linked_po_names_from_pi(doc)
 
@@ -461,6 +462,12 @@ def create_payment_entry_for_pi_submit(doc, method):
     
     _create_payment_entry_for_term(doc, PI_TERM)
     _create_payment_entry_for_term(doc, PI_LAST_TERM)
+    if not doc.custom_inward_by and not doc.custom_inward_datetime:
+        doc.custom_inward_by=doc.owner
+        doc.custom_inward_datetime=doc.creation
+    if not doc.custom_grn_created_by and not doc.custom_grn_created_datetime:
+        doc.custom_grn_created_by=doc.modified_by
+        doc.custom_grn_created_datetime=doc.modified
     # Update PO workflow_state to Inward (and whatever else your function does)
     _mark_pos_inward(po_names, pi_doc=doc)
 

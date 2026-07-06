@@ -951,5 +951,3 @@ def create_user_from_customer():
 #         "invoice_count": len(invoices),
 #         "submitted": bool(submit)
 #     }
-
-
