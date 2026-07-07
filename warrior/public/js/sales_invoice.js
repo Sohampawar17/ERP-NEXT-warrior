@@ -117,7 +117,22 @@ frappe.ui.form.on("Sales Invoice", {
     },
   refresh(frm) {
     // await set_discount_from_sales_order(frm);
+     const is_accounts_manager = frappe.user_roles.includes("Accounts Manager");
 
+        // Hide Credit Note option if not Accounts Manager
+        frappe.after_ajax(() => {
+            setTimeout(() => {
+                if (!is_accounts_manager) {
+                    frm.page.remove_inner_button(__("Credit Note"), __("Create"));
+                    frm.page.remove_inner_button(__("Return / Credit Note"), __("Create"));
+                    frm.page.remove_inner_button(__("Sales Return"), __("Create"));
+                }
+            }, 300);
+        });
+
+        // Make Is Return and Rate Adjustment readonly for non Accounts Manager
+        frm.set_df_property("is_return", "read_only", !is_accounts_manager);
+        frm.set_df_property("is_rate_adjustment_entry", "read_only", !is_accounts_manager);
     // ✅ Only after submit
     if (frm.doc.docstatus !== 1) return;
 
@@ -141,6 +156,7 @@ frappe.ui.form.on("Sales Invoice", {
     }
     if (
       !["Packing OK", "Print Stickers", "Invoiced"].includes(frm.doc.custom_dispatch_status) &&
+      frappe.user_roles.includes("Accounts Manager") &&
       frm.doc.docstatus === 1
     ) {
       frm.add_custom_button(__("Box Stickers"), () => {
@@ -148,7 +164,7 @@ frappe.ui.form.on("Sales Invoice", {
       });
     }
 
-    if ((frm.doc.custom_dispatch_status == "Dispatched") && frm.doc.docstatus == 1) {
+    if ((frm.doc.custom_dispatch_status == "Dispatched") && frm.doc.docstatus == 1 && frappe.user_roles.includes("Accounts Manager")) {
       frm.add_custom_button(
         __("Create Delivery Slip"),
         async () => {
@@ -168,7 +184,7 @@ frappe.ui.form.on("Sales Invoice", {
       );
     }
 
-    if ((frm.doc.custom_dispatch_status == "Upload LR Main") && frm.doc.docstatus == 1 && !should_print_sticker(frm)) {
+    if ((frm.doc.custom_dispatch_status == "Upload LR Main") && frm.doc.docstatus == 1 && !should_print_sticker(frm) && frappe.user_roles.includes("Accounts Manager")) {
       frm.add_custom_button("Create LR Upload", async () => {
 
         const d = new frappe.ui.Dialog({

@@ -3,16 +3,66 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import flt, getdate
-from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
+from frappe.utils import flt, getdate, now, now_datetime
 
 
 class VanTransactions(Document):
-	def on_submit(self):
+	def validate(self):
+		if not self.created_at:
+			self.created_at = now()
+
 		if not self.created_by:
 			self.created_by = frappe.session.user
+
+		self.restrict_recent_duplicate_transaction()
+
+	def on_submit(self):
 		if (self.transaction_status or "").lower() == "approved":
 			self.create_payment_entry()
+
+	def restrict_recent_duplicate_transaction(self):
+		customer = (self.customer or "").strip()
+		sales_order = (self.sales_order or "").strip()
+		amount = flt(self.transaction_amount)
+
+		if not customer or not sales_order or amount <= 0:
+			return
+
+		duplicate_window_seconds = 10
+		transaction_time = self.created_at or now_datetime()
+
+		existing_duplicate = frappe.db.sql(
+			"""
+			SELECT
+				name
+			FROM `tabVan Transactions`
+			WHERE docstatus != 2
+			  AND IFNULL(transaction_status, '') != 'Rejected'
+			  AND customer = %s
+			  AND sales_order = %s
+			  AND ABS(IFNULL(transaction_amount, 0) - %s) < 0.0001
+			  AND name != %s
+			  AND ABS(
+				TIMESTAMPDIFF(
+					SECOND,
+					COALESCE(created_at, creation),
+					%s
+				)
+			  ) <= %s
+			ORDER BY creation DESC
+			LIMIT 1
+			""",
+			(customer, sales_order, amount, self.name or "", transaction_time, duplicate_window_seconds),
+			as_dict=True,
+		)
+
+		if not existing_duplicate:
+			return
+
+		frappe.throw(
+			f"Duplicate Van Transaction restricted. Similar transaction already exists: "
+			f"{existing_duplicate[0].name}"
+		)
 
 
 	def create_payment_entry(self):
@@ -153,4 +203,3 @@ class VanTransactions(Document):
 			frappe.throw(f"Payment Entry Failed: {str(e)}")
 
 		frappe.db.set_value(self.doctype, self.name, "payment_entry", pe.name)
-

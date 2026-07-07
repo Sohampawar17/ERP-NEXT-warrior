@@ -34,7 +34,7 @@ def calculations(doc,method):
         {
             "employee": doc.employee,
             "salary_structure": doc.salary_structure,
-            "from_date": ["<=", doc.start_date],
+            "from_date": ["<=", doc.actual_start_date],
             "docstatus": 1,
         },
         "base",
@@ -42,11 +42,11 @@ def calculations(doc,method):
     )
 
     if base_salary is None:
-        frappe.throw(
+        frappe.msgprint(
             "No submitted Salary Structure Assignment found for:<br><br>"
             f"• Employee: {frappe.bold(doc.employee)}<br>"
             f"• Salary Structure: {frappe.bold(doc.salary_structure)}<br>"
-            f"• From Date ≤ {frappe.bold(str(doc.start_date))}"
+            f"• From Date ≤ {frappe.bold(str(doc.actual_start_date))}"
         )
 
     # =====================================================

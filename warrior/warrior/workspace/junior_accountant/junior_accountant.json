@@ -1,0 +1,118 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"atIFiGOt1b\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Receipt Related</b></span>\",\"col\":12}},{\"id\":\"S4rQII1VUy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Receipt - Bank Transfer Mode\",\"col\":4}},{\"id\":\"gp7RmrfwBL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dealership Deposit Approval\",\"col\":4}},{\"id\":\"-F96E9ahi-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"IDLiOjDQzR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Payment Related</b></span>\",\"col\":12}},{\"id\":\"z-m222W3J3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Expense Claim\",\"col\":3}},{\"id\":\"nyG_xK7gYE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"n756mKfypv\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2026-06-18 16:33:56.210230",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "list-alt",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Junior Accountant",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "General Ledger",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Tally Sales Export DR CR Format",
+   "link_count": 0,
+   "link_to": "Tally Sales Export DR CR Format",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Tally Credit Note Export",
+   "link_count": 0,
+   "link_to": "Tally Credit Note Export",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Payment Collection Report",
+   "link_count": 0,
+   "link_to": "Payment Collection Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Van Collection Settlement Report",
+   "link_count": 0,
+   "link_to": "Van Collection Settlement Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-02 11:06:11.853282",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Junior Accountant",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Accounts User"
+  }
+ ],
+ "sequence_id": 50.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer Receipt - Bank Transfer Mode",
+   "link_to": "Bank Transfer Request",
+   "stats_filter": "[[\"Bank Transfer Request\",\"transfer_type\",\"=\",\"Bank Transfer\",false],[\"Bank Transfer Request\",\"workflow_state\",\"=\",\"Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dealership Deposit Approval",
+   "link_to": "Deposit Amount Payment Approal",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Expense Claim",
+   "link_to": "Expense Claim",
+   "stats_filter": "[[\"Expense Claim\",\"docstatus\",\"=\",\"1\",false],[\"Expense Claim\",\"status\",\"=\",\"Unpaid\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Junior Accountant"
+}

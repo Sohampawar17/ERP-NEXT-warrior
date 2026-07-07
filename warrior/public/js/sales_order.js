@@ -74,7 +74,10 @@ frappe.ui.form.on("Sales Order", {
     set_qty_check_fields(cdt, cdn);
   },
   refresh(frm) {
-
+    if (frappe.flags.reload_sales_order) {
+      frappe.flags.reload_sales_order = false;
+      frm.reload_doc();
+    }
     refresh_all_item_qty_checks(frm);
     clearTimeout(frm.__qty_check_refresh_timeout);
     frm.__qty_check_refresh_timeout = setTimeout(() => refresh_all_item_qty_checks(frm), 500);
@@ -197,6 +200,7 @@ frappe.ui.form.on("Sales Order", {
                       message: __("Van Transaction Created"),
                       indicator: "green"
                     });
+                    frappe.flags.reload_sales_order = true;
 
                     frappe.set_route(
                       "Form",
@@ -221,7 +225,8 @@ frappe.ui.form.on("Sales Order", {
         "INVOICED", "PARTIALLY DISPATCHED",
         "DISPATCHED", "PARTIALLY DELIVERED", "DELIVERED"
       ].includes(frm.doc.custom_dispatch_status) &&
-      ["Fully Paid", "Partially Paid"].includes(frm.doc.custom_payment_status)
+      ["Fully Paid", "Partially Paid"].includes(frm.doc.custom_payment_status) && ["Refund User", "Complaint User"].some(role => frappe.user_roles.includes(role))
+
     ) {
       frm.add_custom_button(__("Refund Request"), () => {
 
@@ -476,6 +481,8 @@ frappe.ui.form.on("Sales Order", {
         frm.page.remove_inner_button(__("Sales Invoice"), __("Create"));
         frm.page.remove_inner_button(__("Payment Request"), __("Create"));
         frm.remove_custom_button("Update Items")
+        frm.remove_custom_button("Stock Reservation")
+
         // Allow invoice until fully billed
         // 🔒 Pending Payment → Payment Entry only
         // if (status === "PENDING PAYMENT") {
@@ -487,7 +494,7 @@ frappe.ui.form.on("Sales Order", {
         // }
 
         // 🚚 Dispatch states → Sales Invoice only
-        if (["READY TO DISPATCH", "PARTIAL DISPATCH", "PARTIALLY DISPATCHED","PARTIALLY INVOICED", "PARTIALLY DELIVERED"].includes(status)) {
+        if (["READY TO DISPATCH", "PARTIAL DISPATCH", "PARTIALLY DISPATCHED", "PARTIALLY INVOICED", "PARTIALLY DELIVERED"].includes(status)) {
 
           // ✅ Step 1: Fully billed → don't show
           if (flt(frm.doc.per_billed) >= 100) return;
@@ -527,10 +534,14 @@ frappe.ui.form.on("Sales Order", {
         frm.page.remove_inner_button(__("Project"), __("Create"));
 
         // If you want to remove stuff from Actions too:
-        frm.page.remove_inner_button(__("Close"), __("Actions"));
-        frm.page.remove_inner_button(__("Re-open"), __("Actions"));
-        frm.page.remove_inner_button(__("Update Status"), __("Actions"));
-
+        frm.remove_custom_button(__("Close"), __("Status"));
+        frm.remove_custom_button(__("Re-open"), __("Status"));
+        frm.remove_custom_button(__("Hold"), __("Status"));
+        frm.remove_custom_button(__("Resume"), __("Status"));
+        frm.remove_custom_button(__("Update Status"), __("Status"));
+        frm.remove_custom_button(__("Reserve"), __("Stock Reservation"));
+        frm.remove_custom_button(__("Unreserve"), __("Stock Reservation"));
+        frm.remove_custom_button(__("Reserved Stock"), __("Stock Reservation"));
       }, 200);
     });
   }

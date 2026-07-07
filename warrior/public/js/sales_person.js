@@ -25,7 +25,7 @@ frappe.ui.form.on('Sales Person', {
 
                 return {
                     filters: [
-                        ['Tehsil', 'district', 'in', districts.length ? districts : [""]]
+                        ['Tahshil', 'district', 'in', districts.length ? districts : [""]]
                     ]
                 };
             });

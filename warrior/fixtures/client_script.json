@@ -2,6 +2,28 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2026-07-02 16:02:10.890879",
+  "module": "Warrior",
+  "name": "Sales Invoice shop name",
+  "script": "frappe.listview_settings['Sales Invoice'] = {\r\n\r\n    add_fields: [\"customer_group\", \"custom_shop_name\"],\r\n\r\n    onload(listview) {\r\n\r\n        // 🔥 Default filter\r\n        listview.filter_area.add([\r\n            ['Sales Invoice', 'custom_dispatch_status', '=', 'Outward']\r\n        ]);\r\n\r\n        listview.page.add_action_item('Create Outward', async function () {\r\n\r\n            let selected = listview.get_checked_items();\r\n\r\n            if (!selected.length) {\r\n                frappe.msgprint('Please select at least one Sales Invoice');\r\n                return;\r\n            }\r\n\r\n            open_outward_dialog(listview, selected);\r\n        });\r\n    },\r\n\r\n    formatters: {\r\n        customer_name(value, field, doc) {\r\n            if (doc.customer_group === \"Dealer\" && doc.custom_shop_name) {\r\n                return `${doc.custom_shop_name}`;\r\n            }\r\n            return value;\r\n        },\r\n        title(value, field, doc) {\r\n            if (doc.customer_group === \"Dealer\" && doc.custom_shop_name) {\r\n                return `${doc.custom_shop_name}`;\r\n            }\r\n            return value;\r\n        }\r\n    }\r\n};\r\n\r\n\r\nasync function open_outward_dialog(listview, invoices) {\r\n\r\n    // 🔥 STEP 1: Fetch box data\r\n    let preview = await frappe.call({\r\n        method: \"warrior.public.sales_invoice_hooks.get_no_of_boxes\",\r\n        args: {\r\n            invoices: invoices.map(i => i.name)\r\n        }\r\n    });\r\n\r\n    let data = preview.message || {\r\n        total_boxes: 0,\r\n        invoices: []\r\n    };\r\n\r\n    console.log(\"BOX DATA:\", data);\r\n\r\n    // 🔥 STEP 2: Dialog\r\n    let d = new frappe.ui.Dialog({\r\n        title: 'Create Outward',\r\n        fields: [\r\n            {\r\n                fieldtype: 'Data',\r\n                label: 'Material Handover',\r\n                fieldname: 'material_handover',\r\n                reqd: 1\r\n            },\r\n            {\r\n                fieldtype: 'Attach',\r\n                label: 'Photo',\r\n                fieldname: 'photo'\r\n            },\r\n            {\r\n                fieldtype: 'Int',\r\n                label: 'No of Boxes',\r\n                fieldname: 'total_boxes',\r\n                default: data.total_boxes\r\n            },\r\n            {\r\n                fieldtype: 'HTML',\r\n                fieldname: 'invoice_preview'\r\n            }\r\n        ],\r\n\r\n        primary_action: async function (values) {\r\n\r\n            await frappe.call({\r\n                method: \"warrior.public.sales_invoice_hooks.create_outward\",\r\n                args: {\r\n                    values: {\r\n                        material_handover: values.material_handover,\r\n                        photo: values.photo,\r\n                        total_boxes: values.total_boxes,\r\n                        invoices: invoices.map(i => i.name)\r\n                    }\r\n                }\r\n            });\r\n\r\n            frappe.msgprint(\"Outward Created\");\r\n\r\n            d.hide();\r\n\r\n            // ✅ Refresh list\r\n            listview.refresh();\r\n        }\r\n    });\r\n\r\n    d.show();\r\n\r\n    // 🔥 STEP 3: Preview table\r\n    let html = `\r\n        <table class=\"table table-bordered table-sm\">\r\n            <tr>\r\n                <th>Invoice</th>\r\n                <th>Customer</th>\r\n                <th>Boxes</th>\r\n            </tr>\r\n    `;\r\n\r\n    (data.invoices || []).forEach(i => {\r\n        html += `\r\n            <tr>\r\n                <td>${i.invoice}</td>\r\n                <td>${i.customer}</td>\r\n                <td><b>${i.boxes}</b></td>\r\n            </tr>\r\n        `;\r\n    });\r\n\r\n    html += `</table>`;\r\n\r\n    d.fields_dict.invoice_preview.$wrapper.html(html);\r\n}",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 1,
+  "modified": "2026-07-02 16:02:17.097395",
+  "module": "Warrior",
+  "name": "Sales order Listview",
+  "script": "frappe.listview_settings[\"Sales Order\"] = {\r\n    add_fields: [\"customer_group\", \"custom_shop_name\"],\r\n\r\n    formatters: {\r\n        customer_name(value, field, doc) {\r\n            if (doc.customer_group === \"Dealer\" && doc.custom_shop_name) {\r\n                return `${doc.custom_shop_name}`;\r\n            }\r\n            return value;\r\n        }\r\n    }\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Delear Registration",
   "enabled": 0,
   "modified": "2026-04-08 03:54:54.882330",

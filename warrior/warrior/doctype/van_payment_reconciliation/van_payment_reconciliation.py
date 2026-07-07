@@ -4,10 +4,21 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import flt, getdate
+from shoption_api.shoption_test_api.utr_validation import (
+	normalize_utr,
+	validate_unique_utr_number,
+)
 
 
 class VanPaymentReconciliation(Document):
 	def validate(self):
+		if self.utr_no:
+			self.utr_no = normalize_utr(self.utr_no)
+			validate_unique_utr_number(
+				self.utr_no,
+				current_doctype=self.doctype,
+				current_name=self.name,
+			)
 		self.validate_required_fields()
 		self.validate_accounts()
 		self.mandatory()
@@ -51,18 +62,6 @@ class VanPaymentReconciliation(Document):
 
 	
 	def mandatory(self):
-		if self.utr_no:
-			is_exists = frappe.get_all(
-				self.doctype,
-				filters={
-					"utr_no": self.utr_no,
-					"name": ["!=", self.name],
-					"docstatus": ["!=", 2],
-				},
-			)
-			if is_exists:
-				frappe.throw("UTR No already exists for another Van Payment Reconciliation")
-
 		if self.bank_transaction_id:
 			is_exists = frappe.get_all(
 				self.doctype,  

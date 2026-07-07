@@ -1,0 +1,69 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"mJR6nYzs-W\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales Back Officer</span>\",\"col\":12}},{\"id\":\"SalqkZ0icK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Coupens\",\"col\":4}},{\"id\":\"Bqnt-xl-iq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Area Mapping to Sales Person\",\"col\":3}},{\"id\":\"H8MTOvhphg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KITPiTBr6e\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2026-04-13 10:42:10.778115",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Sales Back Officer",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Warrior Wise Lead Count",
+   "link_count": 0,
+   "link_to": "Warrior wise lead count",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-02 11:05:45.721884",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Sales Back Officer",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Sales Back Office"
+  }
+ ],
+ "sequence_id": 42.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Coupens",
+   "link_to": "Custom Coupon",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Area Mapping to Sales Person",
+   "link_to": "Sales Person",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Sales Back Officer"
+}

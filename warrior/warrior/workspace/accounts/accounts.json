@@ -1,0 +1,298 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"ufM6tt-hLb\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Receipt Related</b></span>\",\"col\":12}},{\"id\":\"v6TFiW6JHh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Receipt - Bank Transfer Mode\",\"col\":4}},{\"id\":\"hQtbXwobW5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Receipt - Credit Note Mode\",\"col\":4}},{\"id\":\"wJD6E2oO9y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Refund/Order Mapping\",\"col\":4}},{\"id\":\"S_nIuOYNKT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dealership Deposit Approval\",\"col\":4}},{\"id\":\"G1pJM2kMrP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Indian Post Payment Collection\",\"col\":4}},{\"id\":\"obiYA4NCyG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receive van cash\",\"col\":3}},{\"id\":\"De0mDMbiIF\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"x4j5XfdRhI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":3}},{\"id\":\"2ghoGK9lUR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Customer Credit/Debit Note\",\"col\":4}},{\"id\":\"5lD2jrlKlZ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"pMLOxUp0BY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Payments Related</b></span>\",\"col\":12}},{\"id\":\"d7b8PZKzPu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Approve Supplier Payment\",\"col\":4}},{\"id\":\"vM1t1tC_Ff\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Supplier Credit/Debit Note\",\"col\":4}},{\"id\":\"9CksQbW1ov\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Expense Claim\",\"col\":4}},{\"id\":\"qc33gFmkcr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recharge E-Invocing\",\"col\":3}},{\"id\":\"h2qdPmwddw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"fVG_EMXa9f\",\"type\":\"card\",\"data\":{\"card_name\":\"Ledger\",\"col\":4}},{\"id\":\"dRB9NNpjPY\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2026-04-10 14:46:54.104434",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expenses",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Accounts",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ledger",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "General Ledger",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All Invoices",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All GRNs",
+   "link_count": 0,
+   "link_to": "Purchase Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 12,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Tally Sales Export DR CR Format",
+   "link_count": 0,
+   "link_to": "Tally Sales Export DR CR Format",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Tally Credit Note Export",
+   "link_count": 0,
+   "link_to": "Tally Credit Note Export",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Payment Collection Report",
+   "link_count": 0,
+   "link_to": "Payment Collection Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Van Collection Settlement Report",
+   "link_count": 0,
+   "link_to": "Van Collection Settlement Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Indian Post Payment Customers",
+   "link_count": 0,
+   "link_to": "Indian Post Payment Collection Reports",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger",
+   "link_count": 0,
+   "link_to": "Stock Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "HSN-wise Summery Report",
+   "link_count": 0,
+   "link_to": "HSN-wise Summery Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Visit Report",
+   "link_count": 0,
+   "link_to": "Visit Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Purchase Order History",
+   "link_count": 0,
+   "link_to": "Purchase Order History",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Purchase Register",
+   "link_count": 0,
+   "link_to": "Purchase Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Employee KM Report",
+   "link_count": 0,
+   "link_to": "Employee KM Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-30 16:00:08.926659",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Accounts",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  }
+ ],
+ "sequence_id": 43.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Recharge E-Invocing",
+   "link_to": "india-compliance-account",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Expense Claim",
+   "link_to": "Expense Claim",
+   "stats_filter": "[[\"Expense Claim\",\"approval_status\",\"=\",\"Approved\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Approve Supplier Payment",
+   "link_to": "Payment Entry Tracker",
+   "report_ref_doctype": "Payment Entry",
+   "stats_filter": "[[\"Payment Entry\",\"party_type\",\"=\",\"Supplier\",false],[\"Payment Entry\",\"workflow_state\",\"=\",\"Approved By Manager\",false],[\"Payment Entry\",\"payment_type\",\"=\",\"Pay\",false]]",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Journal Entry",
+   "link_to": "Journal Entry",
+   "stats_filter": "[[\"Journal Entry\",\"mode_of_payment\",\"!=\",\"adjusted from one order to another\",false],[\"Journal Entry\",\"posting_date\",\">=\",\"2026-04-01\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer Receipt - Bank Transfer Mode",
+   "link_to": "Bank Transfer Request",
+   "stats_filter": "[[\"Bank Transfer Request\",\"transfer_type\",\"=\",\"Bank Transfer\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer Receipt - Credit Note Mode",
+   "link_to": "Bank Transfer Request",
+   "stats_filter": "[[\"Bank Transfer Request\",\"transfer_type\",\"=\",\"Credit Note\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create Customer Credit/Debit Note",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dealership Deposit Approval",
+   "link_to": "Deposit Amount Payment Approal",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer Refund/Order Mapping",
+   "link_to": "Refund Request",
+   "stats_filter": "[[\"Refund Request\",\"workflow_state\",\"in\",[\"Rejected\",\"Paid\",\"Approved By Manager\"],false],[\"Refund Request\",\"created_on\",\">=\",\"2026-04-01 00:00:00\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Receive van cash",
+   "link_to": "Van Payment Reconciliation",
+   "stats_filter": "[[\"Van Payment Reconciliation\",\"workflow_state\",\"in\",[\"Approved By Manager\",null],false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create Supplier Credit/Debit Note",
+   "link_to": "Purchase Invoice",
+   "stats_filter": "[[\"Purchase Invoice\",\"docstatus\",\"!=\",\"2\",false],[\"Purchase Invoice\",\"is_return\",\"=\",1,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Indian Post Payment Collection",
+   "link_to": "indian-post-payment-",
+   "type": "Page"
+  }
+ ],
+ "title": "Accounts"
+}

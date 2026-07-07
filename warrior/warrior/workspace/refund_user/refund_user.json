@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"wDphluee5n\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Refund User</span>\",\"col\":12}},{\"id\":\"9mh4_GPKd_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raise a Complaint\",\"col\":4}},{\"id\":\"mFXTABRZLA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Refund Request\",\"col\":4}},{\"id\":\"7VrIOEdYO8\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"wX-E3zuqXu\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}}]",
+ "creation": "2026-05-18 15:59:22.193769",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "income",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Refund User",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "KPI Report",
+   "link_count": 0,
+   "link_to": "KPI Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-02 11:05:15.581073",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "Refund User",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Refund User"
+  }
+ ],
+ "sequence_id": 47.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Refund Request",
+   "link_to": "Refund Request",
+   "stats_filter": "[[\"Refund Request\",\"workflow_state\",\"in\",[\"Draft\",\"Approved By Manager\",\"Rejeccted By Manager\"],false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Raise a Complaint",
+   "link_to": "Raise a Complaint",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Refund User"
+}

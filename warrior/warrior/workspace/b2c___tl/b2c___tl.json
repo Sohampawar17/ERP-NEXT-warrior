@@ -1,0 +1,42 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"5MBDQIQIuf\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">B2C - TL</span>\",\"col\":12}},{\"id\":\"Z-gpMkfgm2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create B2C Coupen\",\"col\":3}}]",
+ "creation": "2026-06-18 14:54:11.826614",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "B2C - TL",
+ "links": [],
+ "modified": "2026-07-02 11:05:39.475086",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "B2C - TL",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "TL \u2013 B2C"
+  }
+ ],
+ "sequence_id": 48.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create B2C Coupen",
+   "link_to": "Custom Coupon",
+   "stats_filter": "[[\"Custom Coupon\",\"customer_group\",\"=\",\"Farmer\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "B2C - TL"
+}

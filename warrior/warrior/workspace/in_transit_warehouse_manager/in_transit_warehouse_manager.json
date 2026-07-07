@@ -1,0 +1,138 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"zctXUeOdvp\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">In Transit Manager</span>\",\"col\":12}},{\"id\":\"uuQLD2XTVL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending For Payment\",\"col\":3}},{\"id\":\"c6iUAoBi-w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fully Paid\",\"col\":3}},{\"id\":\"6JiOhVZnlr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"READY TO DISPATCH\",\"col\":3}},{\"id\":\"aWpZrgx6gN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PARTIAL DISPATCH\",\"col\":3}},{\"id\":\"Ctf_YY3g0b\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PARTIALLY AVAILABLE\",\"col\":3}},{\"id\":\"d0CHRA0dXv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MATERIAL SHORTAGE\",\"col\":3}},{\"id\":\"F3IVibNMjR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PARTIALLY INVOICED\",\"col\":3}},{\"id\":\"YVRTiay6_u\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"INVOICED\",\"col\":3}},{\"id\":\"6clLzZm-qI\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"EPwTc7qGRL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mark As Delivred\",\"col\":3}},{\"id\":\"Rr9LnCP76w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivered\",\"col\":3}},{\"id\":\"9YJMGLLMAS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transactions</b></span>\",\"col\":12}},{\"id\":\"Cx9UcaKLqf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cash Collected\",\"col\":3}},{\"id\":\"8rUol8Escs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cash Transfer to Campany\",\"col\":3}},{\"id\":\"sBe5weUx1w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Van Collection Settlement Report\",\"col\":3}}]",
+ "creation": "2026-06-04 00:04:24.378095",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "money-coins-1",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "In Transit Warehouse Manager",
+ "links": [],
+ "modified": "2026-07-02 11:05:22.434563",
+ "modified_by": "soham.pawar@shoption.in",
+ "module": "Warrior",
+ "name": "In Transit Warehouse Manager",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "In Transit Warehouse Manager"
+  }
+ ],
+ "sequence_id": 42.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending For Payment",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"PENDING PAYMENT\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Van Collection Settlement Report",
+   "link_to": "Van Collection Settlement Report",
+   "report_ref_doctype": "Payment Entry",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Cash Collected",
+   "link_to": "Van Transactions",
+   "stats_filter": "[[\"Van Transactions\",\"created_by\",\"is\",\"set\",false],[\"Van Transactions\",\"creation\",\">=\",\"2026-04-01 20:12:56\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Cash Transfer to Campany",
+   "link_to": "Van Payment Reconciliation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Mark As Delivred",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"!=\",\"2\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Dispatched\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Fully Paid",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"FULLY PAID\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Delivered",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"!=\",\"2\",false],[\"Sales Invoice\",\"custom_dispatch_status\",\"=\",\"Delivered\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "READY TO DISPATCH",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"READY TO DISPATCH\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "PARTIAL DISPATCH",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"PARTIAL DISPATCH\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "PARTIALLY AVAILABLE",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"PARTIALLY AVAILABLE\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "MATERIAL SHORTAGE",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"MATERIAL SHORTAGE\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "PARTIALLY INVOICED",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"PARTIALLY INVOICED\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "INVOICED",
+   "link_to": "Sales Order",
+   "stats_filter": "[[\"Sales Order\",\"custom_dispatch_status\",\"=\",\"INVOICED\",false],[\"Sales Order\",\"transaction_date\",\">=\",\"2026-04-08\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "In Transit Warehouse Manager"
+}
